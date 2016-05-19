@@ -11,64 +11,61 @@
 </head>
 
 <body>
-   <div ng-controller="MainCtrl">
-    <div class="container-fluid">
-        <h2>Simulador</h2>
-        <!--        <table class="table">-->
-        <div class="row">
-            <div class="col-md-6 col-sm-6">1</div>
-            <div class="col-md-6 col-sm-6">2</div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sd-6">
-                <tbody>
-                    <tr>
-                        <td>
-                            <form action="">
-                                <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate"> = {{interest_rate}}
-                            </form>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="number" min="1000" max="60000" step="1000" value="1000" ng-model="loan_amount">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Con una tasa de: {{interest_rate}}%</td>
-                    </tr>
-                    <tr>
-                        <td>Con un plazo de: {{months}}</td>
-                    </tr>
-                    <tr>
-                        <td>Con un monto de inversión: ${{loan_amount}}.00 MXN</td>
-                    </tr>
-                    <tr>
-                        <td>Tendrás un rendimiento de: {{output}}</td>
-                    </tr>
-                    <tr>
-                        <td>Y un pag mensual por {{months}} meses de: {{pmt}}</td>
-                    </tr>
-                </tbody>
+    <div ng-controller="MainCtrl">
+        <div class="container-fluid">
+            <h2>Simulador</h2>
+            <div class="row">
+                <div class="col-md-4 col-sd-4">
+                    <form action="">
+                        <input type="number" min="1000" max="60000" step="1000" value="1000" ng-model="loan_amount">
+                        <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate">
+                    </form>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    {{interest_rate}}
+                </div>
             </div>
+            <div class="row">
+
+            </div>
+
+            <tbody>
+                <tr>
+                    <td>Con una tasa de: {{interest_rate}}%</td>
+                </tr>
+                <tr>
+                    <td>Con un plazo de: {{months}}</td>
+                </tr>
+                <tr>
+                    <td>Con un monto de inversión: ${{loan_amount}}.00 MXN</td>
+                </tr>
+                <tr>
+                    <td>Tendrás un rendimiento de: {{output}}</td>
+                </tr>
+                <tr>
+                    <td>Y un pago mensual por {{months}} meses de: {{pmt}}</td>
+                </tr>
+            </tbody>
+
         </div>
+
+
         <!--        </table>-->
+
+
+
+        <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
+
+        <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='12'" ng-true-value="'12'"> 12 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='18'" ng-true-value="'18'"> 18 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='24'" ng-true-value="'24'"> 24 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='36'" ng-true-value="'36'"> 36 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='48'" ng-true-value="'48'"> 48 meses
+        <input type="checkbox" ng-model="months" ng-checked="months=='60'" ng-true-value="'60'"> 60 meses
+
     </div>
 
-
-
-    <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
-
-    <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='12'" ng-true-value="'12'"> 12 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='18'" ng-true-value="'18'"> 18 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='24'" ng-true-value="'24'"> 24 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='36'" ng-true-value="'36'"> 36 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='48'" ng-true-value="'48'"> 48 meses
-    <input type="checkbox" ng-model="months" ng-checked="months=='60'" ng-true-value="'60'"> 60 meses
-
-</div>
-   
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="app.js"></script>
