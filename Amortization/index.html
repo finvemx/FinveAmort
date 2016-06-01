@@ -5,70 +5,246 @@
     <title>Amortize</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" id="font-awesome-cdn-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.4.1" type="text/css" media="all">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
+    <link href="https://plataforma.finve.mx/css/app.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="Font/Finvefont.css">
+
+  
 </head>
 
-<body>
-    <div ng-controller="MainCtrl">
+<!--test-->
+<body ng-controller="MainCtrl">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <h2>Simulador</h2>
-            <div class="row">
-                <div class="col-md-4 col-sd-4">
-                    <form action="">
-                        <input type="number" min="1000" max="60000" step="1000" value="1000" ng-model="loan_amount">
-                        <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate">
-                    </form>
-                </div>
-                <div class="col-md-8 col-sm-8">
-                    {{interest_rate}}
-                </div>
-            </div>
-            <div class="row">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="https://www.finve.mx/">
+                    <figure>
+                        <img src="https://plataforma.finve.mx/img/basic/finve-logo.png" alt="Finve Inversión y préstamos Logo Colores" class="img-responsive" />
+                    </figure>
+                </a>
 
             </div>
 
-            <tbody>
-                <tr>
-                    <td>Con una tasa de: {{interest_rate}}%</td>
-                </tr>
-                <tr>
-                    <td>Con un plazo de: {{months}}</td>
-                </tr>
-                <tr>
-                    <td>Con un monto de inversión: ${{loan_amount}}.00 MXN</td>
-                </tr>
-                <tr>
-                    <td>Tendrás un rendimiento de: {{output}}</td>
-                </tr>
-                <tr>
-                    <td>Y un pago mensual por {{months}} meses de: {{pmt}}</td>
-                </tr>
-            </tbody>
-
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-login" href="https://plataforma.finve.mx">Sesión/Registro&nbsp;<i class="fa fa-sign-in"></i></a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
+    <div class="container border">
+        <h2>Simulador de Inversiones</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Selecciona una tasa de interés efectiva</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="">
+                            <div class="table-responsive">
+                                <table class="table table-sm" style="">
+                                    <tr>
+                                        <td>8</td>
+                                        <td>
+                                            <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate">
+                                        </td>
+                                        <td>20</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Ingresa tu inversión</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-sm" style="">
+                                <tr>
+                                    <td>
+                                        <input type="number" min="1000" max="60000" step="1000" value="1000" ng-model="loan_amount">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Selecciona el plazo</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='12'" ng-true-value="'12'" checked> 12 meses
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='18'" ng-true-value="'18'"> 18 meses
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='24'" ng-true-value="'24'"> 24 meses
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='36'" ng-true-value="'36'"> 36 meses
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='48'" ng-true-value="'48'"> 48 meses
+                                </td>
+                                <td>
+                                    <input type="checkbox" ng-model="months" ng-checked="months=='60'" ng-true-value="'60'"> 60 meses
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
 
-        <!--        </table>-->
-
-
-
-        <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
-
-        <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='12'" ng-true-value="'12'"> 12 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='18'" ng-true-value="'18'"> 18 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='24'" ng-true-value="'24'"> 24 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='36'" ng-true-value="'36'"> 36 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='48'" ng-true-value="'48'"> 48 meses
-        <input type="checkbox" ng-model="months" ng-checked="months=='60'" ng-true-value="'60'"> 60 meses
-
+            <div class="col-md-7">
+                <ul class="list-group">
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con una tasa de: {{interest_rate}}%</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con un monto de inversión: ${{loan_amount}}.00 MXN</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con un plazo de: {{months}} meses</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Tendrás un rendimiento de: {{output}} MXN</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Y un pago mensual por {{months}} meses de: ${{pmt}} MXN</h2></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row footer-content">
+
+                <div class="col-sm-offset-1 col-sm-10">
+
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-title">
+                                MAPA DE SITIO
+                            </div>
+                            <div class="cont-m-sitio">
+                                <ul class="mapa-sitio">
+                                    <li><a href="https://www.finve.mx/">Inicio</a></li>
+                                    <li><a href="https://www.finve.mx/prestamos-empresas/">Empresas</a></li>
+                                    <li><a href="https://www.finve.mx/invertir-en-linea/">Inversionistas</a></li>
+                                    <li><a href="https://plataforma.finve.mx/proyectos-inversion">Proyectos</a></li>
+                                    <li><a href="https://www.finve.mx/como-funciona/">¿Cómo funciona?</a></li>
+                                    <li><a href="https://www.finve.mx/quienes-somos/">¿Quiénes somos?</a></li>
+                                    <li><a href="https://www.finve.mx/equipo-finve/">Equipo Finve</a></li>
+                                    <li><a href="https://www.finve.mx/blog-finve/">Blog Finve</a></li>
+                                    <li><a href="https://www.finve.mx/preguntas-frecuentes-faq/">Preguntas Frecuentes (FAQ)</a></li>
+                                    <li><a href="https://www.finve.mx/glosario/">Glosario</a></li>
+                                    <li><a href="https://www.finve.mx/contacto/">Contacto</a></li>
+                                    <li><a href="https://www.finve.mx/terminos-y-condiciones-finve/">Términos y Condiciones</a></li>
+                                    <li><a href="https://www.finve.mx/aviso-de-privacidad/">Aviso de Privacidad</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3  col-sm-6">
+                            <div class="footer-title">
+                                REDES SOCIALES
+                            </div>
+                            <div class="social-link">
+                                <ul class="list-inline">
+                                    <li class="facebook small">
+                                        <a href="https://www.facebook.com/finvemx/"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li class="google small">
+                                        <a href="https://plus.google.com/b/114403030720927003746/+FinveMx/"><i class="fa fa-google-plus"></i></a>
+
+                                    </li>
+                                    <li class="instagram small">
+                                        <a href="https://www.instagram.com/finvemx/"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li class="linkedin small">
+                                        <a href="https://www.linkedin.com/company/finve"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                    <li class="twitter small">
+                                        <a href="https://twitter.com/finvemx"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li class="youtube small">
+                                        <a href="https://www.finve.mx/#"><i class="fa fa-youtube-play"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer-title">
+                                NUESTROS CONTACTOS
+                            </div>
+
+                            <div class="cont">
+                                <p>
+                                    <a class="green" href="tel:4442115742"> <i class="fa fa-mobile" style="font-size:30px;"></i>&nbsp;&nbsp;(444) 211 5742</a>
+                                    <br>
+                                    <br>
+                                    <i class="fa fa-building-o" style="font-size:20px;"></i>&nbsp;&nbsp;Cordillera del Marquez 845-F Lomas 4ta Sección
+                                    <br> CP 78210 San Luis Potosí, SLP.
+                                    <br>
+                                    <br>
+                                    <a class="green" href="mailto:soporte@finve.mx"><i class="fa fa-envelope-o" style="font-size:20px;"></i>&nbsp;&nbsp;soporte@finve.mx</a>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="">
+                                <figure>
+                                    <img src="https://www.finve.mx/wp-content/uploads/2016/01/finve_footer_r.png" alt="Finve Logo Blanco footer">
+                                </figure>
+                            </div>
+
+                            <div class="cont">
+                                <p>
+                                    <br> En Finve, trabajamos para crear un ecosistema más favorable para las PyMEs, la base esencial de nuestra economía.
+                                    <br>
+                                    <strong>Quetzal Montes, Fundador.</strong>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="copyright">Grupo Finve SAPI de CV 2016 &copy; Todos los Derechos Reservados.</div>
+        </div>
+    </footer>
+
+    <!-----------------------------------------------SCRIPTS---------------------------------------------------- -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="chat.js"></script>
+
 </body>
 
 </html>
