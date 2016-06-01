@@ -1,0 +1,8 @@
+@font-face {
+    font-family: finveFont;
+    src: url(Finvefont.otf);
+}
+
+body {
+    font-family: finveFont;
+}
