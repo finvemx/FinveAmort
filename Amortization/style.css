@@ -954,3 +954,25 @@ input[type="number"] {
     font-family: finveFont;
     padding-left: 30px;
 }
+
+select{
+    width: 120px;
+    height: 100%;
+    font-size:17px;
+    font-family: finveFont;
+    margin-left: 60px;
+    background: rgba(0,0,0,0.3);
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+
+.botonCalcular {
+    background-color: rgb(27, 176, 171); /* Green */
+    border: none;
+    color: white;
+    padding: 8px 45px;
+    text-align: center;
+/*    text-decoration: none;*/
+    display: inline-block;
+    font-size: 16px;
+}
