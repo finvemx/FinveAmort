@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div>
-                    <button ng-click="calculate(interest_rate /100 / months, months, -loan_amount)">Calcular</button>
+                    <button ng-click="calculate(interest_rate /100 / meses.month, meses.month, -loan_amount)">Calcular</button>
                     <br>
                     <br>
                 </div>
@@ -148,7 +148,7 @@
                     <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
                         <h2 style="font-size:20px; line-height:20px;">Con un monto de inversión: ${{loan_amount}}.00 MXN</h2></li>
                     <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
-                        <h2 style="font-size:20px; line-height:20px;">Con un plazo de: {{months}}</h2></li>
+                        <h2 style="font-size:20px; line-height:20px;">Con un plazo de: {{meses.month}} meses</h2></li>
                     <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
                         <h2 style="font-size:20px; line-height:20px;">Tendrás un rendimiento de: {{output}} MXN</h2></li>
                     <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
