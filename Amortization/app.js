@@ -7,14 +7,15 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
     $scope.months = null;
     $scope.pmt = null;
     $scope.selected = null;
-    $scope.output= null;
+    $scope.output = null;
 
     $scope.calculate = function (rate, nper, pv) {
 
         var pvif = Math.pow(1 + rate, nper);
         var result = rate / (pvif - 1) * -(pv * pvif);
         $scope.pmt = result.toFixed(2);
-            $scope.output = $scope.pmt * $scope.months;
+        $scope.out = $scope.pmt * $scope.months;
+        $scope.output = $scope.out.toFixed(2);
 
     };
 

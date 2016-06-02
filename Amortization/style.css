@@ -1,6 +1,6 @@
 @font-face {
     font-family: finveFont;
-    src: url(Font/FinveFont.otf);
+    src: url(Font/FinveFont.ttf);
 }
 
 body {
@@ -108,6 +108,7 @@ h5 {
     font-size: 36px;
     font-family: BreveSansText-Light
 }
+
 
 /*
 input,
@@ -944,4 +945,12 @@ label.amount {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+input[type="number"] {
+    width: 120px;
+    height: 100%;
+    font-size:20px;
+    font-family: finveFont;
+    padding-left: 30px;
 }
