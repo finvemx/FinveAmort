@@ -41,7 +41,7 @@
                     <div class="panel-body">
                         <form action="">
                             <div class="table-responsive">
-                                <table class="table table-sm" style="">
+                                <table class="table table-sm" style="font-family: finveFont;">
                                     <tr>
                                         <td>8</td>
                                         <td>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-sm" style="">
+                            <table class="table table-sm" style="font-family: finveFont;">
                                 <tr>
                                     <td>
 
@@ -89,15 +89,20 @@
                         </table>
                     </div>
                 </div>
-                <div style="padding-left: 78px;">
-                    <button class="botonCalcular" ng-click="calculate(interest_rate /100 / meses.month, meses.month, -loan_amount)">Calcular</button>
-                    <br>
-                    <br>
+                <div>
+                    <table class="" align="center">
+                        <tr>
+                            <td>
+                                <button class="botonCalcular" ng-click="calculate(interest_rate /100 / meses.month, meses.month, -loan_amount)" style="font-family: finveFont;">CALCULAR</button>
+                                <br>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
             <div class="col-md-7">
-
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Tu inversión constará </h3>
@@ -105,30 +110,41 @@
                     <div class="panel-body">
 
                         <div class="table-responsive">
-                            <table class="table table-sm" style="font-size:20px;">
+                            <table class="table table-sm" style="font-family: finveFont;">
                                 <tr>
-                                    <td>Con una tasa de:</td>
+                                    <td>Una tasa de:</td>
                                     <td>{{interest_rate}}%</td>
                                 </tr>
                                 <tr>
-                                    <td>Con un monto de inversión:</td>
+                                    <td>Un monto de inversión:</td>
                                     <td>${{loan_amount}}.00 MXN</td>
                                 </tr>
                                 <tr>
-                                    <td>Con un plazo de:</td>
+                                    <td>Un plazo de:</td>
                                     <td>{{meses.month}} meses</td>
                                 </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tu resultado será de</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-sm" style="font-family: finveFont;">
                                 <tr>
-                                    <td>Tendrás un rendimiento de:</td>
-                                    <td>{{output}} MXN</td>
+                                    <td>Con un rendimiento de:</td>
+                                    <td>${{output}} MXN</td>
                                 </tr>
                                 <tr>
-                                    <td>Y un pago mensual por {{months}} meses de:</td>
+                                    <td>Y un pago mensual de:</td>
                                     <td>${{pmt}} MXN</td>
                                 </tr>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

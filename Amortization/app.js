@@ -2,12 +2,13 @@ var app = angular.module("amort", []);
 
 app.controller("MainCtrl", ["$scope", function ($scope) {
 
-    $scope.loan_amount = null;
-    $scope.interest_rate = null;
+    $scope.loan_amount = 1000;
+    $scope.interest_rate = 14;
     //    $scope.months = null;
-    $scope.pmt = null;
-    $scope.selected = null;
-    $scope.output = null;
+    $scope.pmt = 180.54;
+//    $scope.selected = null;
+    $scope.output = 1083.24;
+    
 
     $scope.meses = [
         {
@@ -73,7 +74,7 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
         var result = rate / (pvif - 1) * -(pv * pvif);
         $scope.pmt = result.toFixed(2);
         $scope.out = $scope.pmt * $scope.meses.month;
-        $scope.output = $scope.out.toFixed(2);
+        $scope.output = $scope.out;
 
     };
 
