@@ -82,6 +82,33 @@
                     <div class="panel-body">
                         <table class="">
                             <tr>
+<<<<<<< HEAD
+=======
+                                <td>
+
+
+                                    <!--
+                                    <select ng-model="months">
+                                        <option ng-checked="months=='6'" ng-true-value="'6'"> 6 meses</option>
+                                        <option ng-checked="months=='12'" ng-true-value="'12'"> 12 meses</option>
+                                        <option ng-checked="months=='18'" ng-true-value="'18'"> 18 meses</option>
+                                        <option ng-checked="months=='24'" ng-true-value="'24'"> 24 meses</option>
+                                        <option ng-checked="months=='36'" ng-true-value="'36'"> 36 meses</option>
+                                        <option ng-checked="months=='48'" ng-true-value="'48'"> 48 meses</option>
+                                        <option ng-checked="months=='60'" ng-true-value="'60'"> 60 meses</option>
+
+                                    </select>
+-->
+                                    <select ng-model="meses.month" ng-options="month.lookupCode as month.description for month in codigo"></select>
+                                </td>
+                            </tr>
+
+                            <!--
+                            <tr>
+
+                                <input type="checkbox" ng-model="months" ng-checked="months=='6'" ng-true-value="'6'"> 6 meses
+                                </td>
+>>>>>>> f07ada2cf799dbb0b9cbba0d8ca89984a1937a79
                                 <td>
                                     <select ng-model="meses.month" ng-options="month.lookupCode as month.description for month in codigo" ng-init="meses[0]"></select>
                                 </td>
@@ -90,6 +117,7 @@
                     </div>
                 </div>
                 <div>
+<<<<<<< HEAD
                     <table class="" align="center">
                         <tr>
                             <td>
@@ -99,10 +127,16 @@
                             </td>
                         </tr>
                     </table>
+=======
+                    <button ng-click="calculate(interest_rate /100 / meses.month, meses.month, -loan_amount)">Calcular</button>
+                    <br>
+                    <br>
+>>>>>>> f07ada2cf799dbb0b9cbba0d8ca89984a1937a79
                 </div>
             </div>
 
             <div class="col-md-7">
+<<<<<<< HEAD
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Tu inversión constará </h3>
@@ -147,6 +181,20 @@
                         </div>
                     </div>
                 </div>
+=======
+                <ul class="list-group">
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con una tasa de: {{interest_rate}}%</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con un monto de inversión: ${{loan_amount}}.00 MXN</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Con un plazo de: {{meses.month}} meses</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Tendrás un rendimiento de: {{output}} MXN</h2></li>
+                    <li class="list-group-item" style="background-color: rgb(27, 176, 171); color:#fff;">
+                        <h2 style="font-size:20px; line-height:20px;">Y un pago mensual por {{months}} meses de: ${{pmt}} MXN</h2></li>
+                </ul>
+>>>>>>> f07ada2cf799dbb0b9cbba0d8ca89984a1937a79
             </div>
         </div>
     </div>

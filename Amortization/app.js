@@ -2,6 +2,7 @@ var app = angular.module("amort", []);
 
 app.controller("MainCtrl", ["$scope", function ($scope) {
 
+<<<<<<< HEAD
     $scope.loan_amount = 1000;
     $scope.interest_rate = 14;
     //    $scope.months = null;
@@ -65,6 +66,72 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
         }
     ];
             $scope.meses = $scope.meses[0];
+
+
+=======
+    $scope.loan_amount = null;
+    $scope.interest_rate = null;
+    //    $scope.months = null;
+    $scope.pmt = null;
+    $scope.selected = null;
+    $scope.output = null;
+>>>>>>> f07ada2cf799dbb0b9cbba0d8ca89984a1937a79
+
+    $scope.meses = [
+        {
+            'month': '6'
+        },
+        {
+            'month': '12'
+        },
+        {
+            'month': '18'
+        },
+        {
+            'month': '24'
+        },
+        {
+            'month': '36'
+        },
+        {
+            'month': '48'
+        },
+        {
+            'month': '60'
+        }
+    ];
+
+    $scope.codigo = [
+        {
+            'lookupCode': '6',
+            'description': ' 06 Meses'
+        },
+        {
+            'lookupCode': '12',
+            'description': '12 Meses'
+        },
+        {
+            'lookupCode': '18',
+            'description': '18 Meses'
+        },
+        {
+            'lookupCode': '24',
+            'description': '24 Meses'
+        },
+        {
+            'lookupCode': '36',
+            'description': '36 Meses'
+        },
+        {
+            'lookupCode': '48',
+            'description': '48 Meses'
+        },
+        {
+            'lookupCode': '60',
+            'description': '60 Meses'
+        }
+    ];
+    //        $scope.myMonth = $scope.months;
 
 
 
