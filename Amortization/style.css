@@ -8,7 +8,7 @@ body {
     /*    font-family: 'Open Sans', sans-serif;*/
     font-family: finveFont;
     color: rgb(88, 89, 91);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -551,6 +551,7 @@ footer a {
 .panel.project:hover {}
 
 .panel.project .panel-body {
+    font-family: finveFont;
     padding: 0;
     background-color: white;
     color: rgb(88, 89, 91);
@@ -953,4 +954,30 @@ input[type="number"] {
     font-size:20px;
     font-family: finveFont;
     padding-left: 30px;
+}
+
+select{
+    width: 120px;
+    height: 100%;
+    font-size:17px;
+    font-family: finveFont;
+    margin-left: 60px;
+    background: rgba(0,0,0,0.3);
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+
+.botonCalcular {
+    font-family: finveFont;
+    background-color: rgb(27, 176, 171); 
+    border: none;
+    color: white;
+    padding: 8px 150px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+@media (max-width: @screen-xs) {
+    body{font-size: 1px;}
 }

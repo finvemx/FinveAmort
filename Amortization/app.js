@@ -2,12 +2,13 @@ var app = angular.module("amort", []);
 
 app.controller("MainCtrl", ["$scope", function ($scope) {
 
-    $scope.loan_amount = null;
-    $scope.interest_rate = null;
+    $scope.loan_amount = 1000;
+    $scope.interest_rate = 14;
     //    $scope.months = null;
-    $scope.pmt = null;
-    $scope.selected = null;
-    $scope.output = null;
+    $scope.pmt = 180.54;
+//    $scope.selected = null;
+    $scope.output = 1083.24;
+    
 
     $scope.meses = [
         {
@@ -36,7 +37,7 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
     $scope.codigo = [
         {
             'lookupCode': '6',
-            'description': ' 06 Meses'
+            'description': ' 6 Meses'
         },
         {
             'lookupCode': '12',
@@ -63,7 +64,7 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
             'description': '60 Meses'
         }
     ];
-    //        $scope.myMonth = $scope.months;
+            $scope.meses = $scope.meses[0];
 
 
 
