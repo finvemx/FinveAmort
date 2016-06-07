@@ -64,7 +64,7 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
             'description': '60 Meses'
         }
     ];
-    //        $scope.myMonth = $scope.months;
+            $scope.meses = $scope.meses[0];
 
 
 
@@ -74,7 +74,7 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
         var result = rate / (pvif - 1) * -(pv * pvif);
         $scope.pmt = result.toFixed(2);
         $scope.out = $scope.pmt * $scope.meses.month;
-        $scope.output = $scope.out;
+        $scope.output = $scope.out.toFixed(2);
 
     };
 

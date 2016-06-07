@@ -43,11 +43,11 @@
                             <div class="table-responsive">
                                 <table class="table table-sm" style="font-family: finveFont;">
                                     <tr>
-                                        <td>8</td>
+                                        <td>8%</td>
                                         <td>
                                             <input type="range" id="a" name="a" value="14" min="8" max="20" ng-model="interest_rate">
                                         </td>
-                                        <td>20</td>
+                                        <td>20%</td>
                                     </tr>
                                 </table>
                             </div>
@@ -83,7 +83,7 @@
                         <table class="">
                             <tr>
                                 <td>
-                                    <select ng-model="meses.month" ng-options="month.lookupCode as month.description for month in codigo"></select>
+                                    <select ng-model="meses.month" ng-options="month.lookupCode as month.description for month in codigo" ng-init="meses[0]"></select>
                                 </td>
                             </tr>
                         </table>
