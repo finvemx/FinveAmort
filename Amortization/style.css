@@ -521,7 +521,7 @@ footer a {
 }
 
 .panel-default .panel-heading {
-    background-color: rgb(27, 176, 171);
+    background-color: #00AFA9;
     border-radius: 0;
     /*font-family: MetaPro-Bold;*/
     font-family: 'Open Sans', sans-serif;
@@ -951,33 +951,44 @@ label.amount {
 input[type="number"] {
     width: 120px;
     height: 100%;
-    font-size:20px;
+    font-size: 20px;
     font-family: finveFont;
     padding-left: 30px;
 }
 
-select{
+select {
     width: 120px;
     height: 100%;
-    font-size:17px;
+    font-size: 17px;
     font-family: finveFont;
     margin-left: 60px;
-    background: rgba(0,0,0,0.3);
-    color:#fff;
-    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
 .botonCalcular {
     font-family: finveFont;
-    background-color: rgb(27, 176, 171); 
+    background-color: grey;
     border: none;
     color: white;
     padding: 8px 150px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    -o-transition: color .2s ease-out, background 1s ease-in;
+    -ms-transition: color .2s ease-out, background 1s ease-in;
+    -moz-transition: color .2s ease-out, background 1s ease-in;
+    -webkit-transition: color .2s ease-out, background 1s ease-in;
+    transition: color .2s ease-out, background 1s ease-in;
+}
+
+.botonCalcular:hover {
+    background-color: #00AFA9;
 }
 
 @media (max-width: @screen-xs) {
-    body{font-size: 1px;}
+    body {
+        font-size: 1px;
+    }
 }

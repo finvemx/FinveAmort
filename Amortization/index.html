@@ -5,9 +5,11 @@
     <title>Amortize</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
     <link rel="stylesheet" id="font-awesome-cdn-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.4.1" type="text/css" media="all">
     <link href="https://plataforma.finve.mx/css/app.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+
 </head>
 
 <body ng-controller="MainCtrl">
@@ -89,7 +91,7 @@
                     <table class="" align="center">
                         <tr>
                             <td>
-                                <button class="botonCalcular" ng-click="calculate(interest_rate /100 / 12, meses.month, -loan_amount)" style="font-family: finveFont;">CALCULAR</button>
+                                <button class=" botonCalcular" ng-click="calculate(interest_rate /100 / 12, meses.month, -loan_amount)" style="font-family: finveFont;"><i class="fa fa-usd" aria-hidden="true"></i>&nbsp; CALCULAR</button>
                                 <br>
                                 <br>
                             </td>
@@ -247,6 +249,8 @@
     <!-----------------------------------------------SCRIPTS---------------------------------------------------- -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <script src="app.js"></script>
     <script src="chat.js"></script>
 
