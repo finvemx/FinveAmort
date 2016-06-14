@@ -969,22 +969,23 @@ select {
 
 .botonCalcular {
     font-family: finveFont;
-    background-color: grey;
+    background-color: #00AFA9;
     border: none;
     color: white;
     padding: 8px 150px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    -o-transition: color .2s ease-out, background 1s ease-in;
-    -ms-transition: color .2s ease-out, background 1s ease-in;
-    -moz-transition: color .2s ease-out, background 1s ease-in;
-    -webkit-transition: color .2s ease-out, background 1s ease-in;
-    transition: color .2s ease-out, background 1s ease-in;
+    -o-transition: color .2s ease-out, background .2s ease-in;
+    -ms-transition: color .2s ease-out, background .2s ease-in;
+    -moz-transition: color .2s ease-out, background .2s ease-in;
+    -webkit-transition: color .2s ease-out, background .2s ease-in;
+    transition: color .2s ease-out, background .2s ease-in;
 }
 
 .botonCalcular:hover {
-    background-color: #00AFA9;
+    background-color: #eedc00;
+    color:rgb(88, 89, 91);
 }
 
 
