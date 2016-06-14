@@ -6,9 +6,9 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
     $scope.interest_rate = 14;
     //    $scope.months = null;
     $scope.pmt = 180.54;
-//    $scope.selected = null;
+    //    $scope.selected = null;
     $scope.output = 1083.24;
-    
+
 
     $scope.meses = [
         {
@@ -64,7 +64,8 @@ app.controller("MainCtrl", ["$scope", function ($scope) {
             'description': '60 Meses'
         }
     ];
-            $scope.meses = $scope.meses[0];
+
+    $scope.meses = $scope.meses[0];
 
 
 
