@@ -908,7 +908,6 @@ label.amount {
 .bg-voucher {
     background-image: url('http://plataforma.finve.mx/img/basic/bg-voucher.png');
     background-size: 100%;
-    background-position-y: -100px;
     padding-left: 120px;
     padding-right: 120px;
 }
